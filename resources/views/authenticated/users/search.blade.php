@@ -89,6 +89,10 @@
           </div>
           <div class="selected_engineer">
             <label>選択科目</label>
+            @foreach($subjects as $subject)
+            {{$subject -> subject}}
+            <input type="checkbox" name="subject[]" value="{{$subject -> id}}">
+            @endforeach
           </div>
         </div>
       </div>
