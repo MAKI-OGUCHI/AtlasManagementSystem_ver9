@@ -9,7 +9,7 @@
           <div>
             @if(Auth::id() === $post->user_id)
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a href="{{ route('post.delete', ['id' => $post->id]) }}">削除</a>
+            <span class="delete-modal-open text-danger" post_id="{{ $post->id }}">削除</span>
             @endif
           </div>
         </div>
@@ -59,9 +59,15 @@
     <form action="{{ route('post.edit') }}" method="post">
       <div class="w-100">
         <div class="modal-inner-title w-50 m-auto">
+          @error('post_title')
+            <p class="text-danger mb-1">{{ $message }}</p>
+          @enderror
           <input type="text" name="post_title" placeholder="タイトル" class="w-100">
         </div>
         <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
+          @error('post_body')
+            <p class="text-danger mb-1">{{ $message }}</p>
+          @enderror
           <textarea placeholder="投稿内容" name="post_body" class="w-100"></textarea>
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
@@ -74,4 +80,28 @@
     </form>
   </div>
 </div>
+<div class="modal js-delete-modal" style="display:none;">
+  <div class="modal__bg js-delete-modal-close"></div>
+  <div class="modal__content">
+    <p class="mb-3">本当に削除しますか？</p>
+
+    <form action="{{ route('post.delete') }}" method="post">
+      @csrf
+      @method('DELETE')
+      <input type="hidden" name="post_id" class="delete-modal-hidden" value="">
+
+      <div class="d-flex justify-content-end gap-2">
+        <button type="button" class="btn btn-secondary js-delete-modal-close">キャンセル</button>
+        <button type="submit" class="btn btn-danger">削除する</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  @if($errors->any())
+    $('.js-modal').show();
+  @endif
+</script>
+
 </x-sidebar>

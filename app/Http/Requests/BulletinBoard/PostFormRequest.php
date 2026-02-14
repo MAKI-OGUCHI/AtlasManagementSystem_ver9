@@ -27,10 +27,18 @@ class PostFormRequest extends FormRequest
             'post_title' => 'required|string|max:100',
             'post_body' => 'required|string|max:2000',
         ];
+
+        if ($this->routeIs('post.edit')) {
+        $rules['post_id'] = 'required|integer';
+    }
+
+    return $rules;
     }
 
     public function messages(){
         return [
+            'post_id.required' => '投稿IDが不正です。',
+            'post_id.integer'  => '投稿IDが不正です。',
             'post_title.required' => 'タイトルは必ず入力してください。',
             'post_title.string' => 'タイトルは文字列である必要があります。',
             'post_title.max' => 'タイトルは100文字以内で入力してください。',

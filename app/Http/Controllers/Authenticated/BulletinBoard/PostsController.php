@@ -57,7 +57,7 @@ class PostsController extends Controller
         return redirect()->route('post.show');
     }
 
-    public function postEdit(Request $request){
+    public function postEdit(PostFormRequest $request){
         Post::where('id', $request->post_id)->update([
             'post_title' => $request->post_title,
             'post' => $request->post_body,
@@ -65,10 +65,15 @@ class PostsController extends Controller
         return redirect()->route('post.detail', ['id' => $request->post_id]);
     }
 
-    public function postDelete($id){
-        Post::findOrFail($id)->delete();
+    public function postDelete(Request $request){
+        $post = Post::findOrFail($request->post_id);
+        if ($post->user_id !== Auth::id()){
+            abort(403);
+        }
+        $post->delete();
         return redirect()->route('post.show');
     }
+
     public function mainCategoryCreate(Request $request){
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
