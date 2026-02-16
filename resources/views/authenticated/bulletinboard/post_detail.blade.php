@@ -8,8 +8,9 @@
           </div>
           <div>
             @if(Auth::id() === $post->user_id)
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <span class="delete-modal-open text-danger" post_id="{{ $post->id }}">削除</span>
+            <a class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
+
+            <a class="delete-modal-open text-danger" post_id="{{ $post -> id}}" href="{{route('post.delete',['id' => $post -> id])}}" onclick="return confirm('投稿を削除します')">削除</a>
             @endif
           </div>
         </div>
@@ -85,7 +86,7 @@
   <div class="modal__content">
     <p class="mb-3">本当に削除しますか？</p>
 
-    <form action="{{ route('post.delete') }}" method="post">
+    <form action="{{ route('post.delete',['id' => $post -> id]) }}" method="post">
       @csrf
       @method('DELETE')
       <input type="hidden" name="post_id" class="delete-modal-hidden" value="">
@@ -99,9 +100,9 @@
 </div>
 
 <script>
-  @if($errors->any())
-    $('.js-modal').show();
-  @endif
+function myFunction() {
+  alert("本当に削除しますか？");
+}
 </script>
 
 </x-sidebar>
