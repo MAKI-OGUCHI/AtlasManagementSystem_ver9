@@ -65,10 +65,10 @@ class PostsController extends Controller
         return redirect()->route('post.detail', ['id' => $request->post_id]);
     }
 
-    public function postDelete(Request $request){
-        $post = Post::findOrFail($request->post_id);
-        if ($post->user_id !== Auth::id()){
-            abort(403);
+    public function postDelete($id){
+        $post = Post::findOrFail($id);
+        if ($post->user_id !== Auth::id()) {
+        abort(403);
         }
         $post->delete();
         return redirect()->route('post.show');

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Validator;
 
 class PostRequest extends FormRequest
 {
@@ -30,12 +31,31 @@ class PostRequest extends FormRequest
             'under_name_kana' => 'required|string|regex:/\A[ァ-ヴー]+\z/u|max:30',
             'mail_address' => 'required|email|unique:users,email|max:100',
             'sex' => 'required|integer|in:1,2,3',
-            'old_year' => 'required|integer|between:1985,2010',
+            'old_year' => 'required|integer|between:2000,'.now()->year,
             'old_month' => 'required|integer|between:1,12',
             'old_day' => 'required|integer|between:1,31',
             'role' => 'required|integer|in:1,2,3,4',
             'password' => 'required|string|min:8|max:30|confirmed',
         ];
+    }
+
+    public function withValidator(Validator $validator)
+    {
+        $validator->after(function ($validator) {
+            $y = (int) $this->input('old_year');
+            $m = (int) $this->input('old_month');
+            $d = (int) $this->input('old_day');
+
+            if (!checkdate($m, $d, $y)) {
+                $validator->errors()->add('old_year', '正しい日付を入力してください。');
+                return;
+            }
+
+            $date = sprintf('%04d-%02d-%02d', $y, $m, $d);
+            if ($date < '2000-01-01' || $date > now()->toDateString()) {
+                $validator->errors()->add('old_year', '生年月日は2000年1月1日から今日までの範囲で入力してください。');
+            }
+        });
     }
 
     public function messages()
