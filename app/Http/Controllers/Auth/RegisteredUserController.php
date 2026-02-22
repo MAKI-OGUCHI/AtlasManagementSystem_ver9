@@ -25,7 +25,6 @@ class RegisteredUserController extends Controller
         DB::beginTransaction();
         try {
 
-            // 生年月日（PostRequestでcheckdate済み）
             $birth_day = sprintf(
                 '%04d-%02d-%02d',
                 $validated['old_year'],
