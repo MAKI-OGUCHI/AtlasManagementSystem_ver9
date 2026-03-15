@@ -51,11 +51,11 @@
           <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
         @endif
        <p class="m-0">サブカテゴリー</p>
+       <select name="main_category_id" form="subCategoryRequest">
         @foreach($main_categories as $main_category)
-          <select name="main_category_id" form="subCategoryRequest">
             <option value="{{$main_category -> id}}">{{$main_category -> main_category}}</option>
-          </select>
         @endforeach
+        </select>
         <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
       </div>
