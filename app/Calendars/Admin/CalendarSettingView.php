@@ -2,7 +2,7 @@
 namespace App\Calendars\Admin;
 use Carbon\Carbon;
 use App\Models\Calendars\ReserveSettings;
-
+// スクール予約画面
 class CalendarSettingView{
   private $carbon;
 

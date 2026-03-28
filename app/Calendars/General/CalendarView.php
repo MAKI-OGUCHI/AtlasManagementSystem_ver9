@@ -3,7 +3,7 @@ namespace App\Calendars\General;
 
 use Carbon\Carbon;
 use Auth;
-
+// スクール予約画面
 class CalendarView{
 
   private $carbon;
