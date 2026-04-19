@@ -13,4 +13,14 @@
     </div>
   </div>
 </div>
+<div class="modal">
+  <div class="modal__bg js_modal_close"></div>
+  <div class="modal__content">
+  <p>予約日：</p><p class="modal-reserveDay"></p>
+  <p>時間：</p><p class="modal-reservePart"></p>
+  <p>上記の予約をキャンセルしてもよろしいですか？</p>
+  <button class="modal_bg">閉じる</button>
+  <button class="">キャンセル</button>
+  </div>
+</div>
 </x-sidebar>
