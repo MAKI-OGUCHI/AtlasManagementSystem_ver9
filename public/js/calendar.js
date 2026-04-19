@@ -5,6 +5,8 @@ $(function () {
     var part = $(this).attr('part');
     $('.modal-reserveDay').text(day);
     $('.modal-reservePart').text(part);
+    $('.modalDay').val(day);
+    $('.modalPart').val(part);
     return false;
     // $(function () {
     //   $(document).on('click', '.btn-danger', function () {
