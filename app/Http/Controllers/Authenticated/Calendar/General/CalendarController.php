@@ -41,7 +41,7 @@ class CalendarController extends Controller
         $reservePart = 1;
     }else if($reservePart == "リモ2部"){
         $reservePart = 2;}
-        else if($reservePart == "リモ3部"){
+    else if($reservePart == "リモ3部"){
         $reservePart = 3;}
     $reserve_settings = ReserveSettings::where('setting_reserve', $reserveDay) -> where('setting_part', $reservePart) -> first();
     $reserve_settings -> increment('limit_users');

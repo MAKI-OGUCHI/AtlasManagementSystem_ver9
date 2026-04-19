@@ -16,10 +16,43 @@ li {
   list-style: none;
 }
 
-/* ログイン画面 */
-.login{display:flex;
-       flex-flow: column;}
-.login_img{margin-bottom:50px;}
+/* ログイン画面全体 */
+.login_screen{background-color: #ebf0f5;
+              min-height: 100vh;}
+.login {display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;}
+.login_img {margin-bottom: 30px;}
+.login_form {background-color: #fff;
+             width: 320px;
+             padding: 30px 0;
+             border-radius: 6px;
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);}
+.login_form .form_box {width: 100%;
+                       border: none !important;
+                       height: auto;}
+.login_form .input_area {width: 75%;
+                         margin: 0 auto 25px auto;}
+.login_form label {display: block;
+                   margin: 0 0 5px 0;
+                   font-size: 13px;}
+.login_form input[type="text"],
+.login_form input[type="password"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 5px 0;
+  background-color: transparent;
+}
+.login_form .border-bottom {
+  border-bottom: 1px solid #007bff !important;
+}
+.login_btn {width: 75%;
+            margin: 0 auto 15px auto;
+            text-align: right;}
+.register_link {text-align: center;
+                font-size: 13px;}
 
 /* サイドバー */
 .sidebar {
@@ -36,6 +69,7 @@ li {
 .sidebar p a {
   color: #FFF;
 }
+.menu_icon{width:22px;}
 
 /* トップページ */
 .user_status {
@@ -154,6 +188,25 @@ li {
   font-size: 12px;
   color: red;
 }
+
+.post_btn{ display: block;
+  width: 100%;
+  background-color: #2ea9df;
+  text-align: center;
+  text-decoration: none;
+  padding:6px 0;
+  border-radius: 4px;
+  margin-bottom:10px;}
+.post_btn a{color:#fff;}
+.keyword{margin-bottom:10px;}
+.search_btn{background-color:#2ea9df;
+color:#fff;}
+
+.like_btn_list{background-color:#e38eab;
+          color:#fff;}
+.my_posts{background-color:#ebbc5d;
+          color:#fff;}
+
 
 /* 掲示板 詳細画面 */
 .contributor {
