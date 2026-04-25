@@ -45,9 +45,7 @@ li {
   padding: 5px 0;
   background-color: transparent;
 }
-.login_form .border-bottom {
-  border-bottom: 1px solid #007bff !important;
-}
+.login_form .border-bottom {border-bottom: 1px solid #007bff !important;}
 .login_btn {width: 75%;
             margin: 0 auto 15px auto;
             text-align: right;}
@@ -196,16 +194,30 @@ li {
   text-decoration: none;
   padding:6px 0;
   border-radius: 4px;
-  margin-bottom:10px;}
+  margin-bottom:16px;}
 .post_btn a{color:#fff;}
-.keyword{margin-bottom:10px;}
+.keyword{margin-bottom:16px;
+        display:flex;}
+.search_input{padding:5px 12px;
+              width:80%;
+              border-color:#dee2e6;
+              background-color:transparent}
 .search_btn{background-color:#2ea9df;
-color:#fff;}
-
+            color:#fff;
+            border:none;
+            padding:5px 12px;
+            width:20%;}
+.filter_btn{display:flex;
+            gap:2px;}
+.filter_btn input{padding:4px 8px;
+                  flex:1;
+                  border-radius:4px;}
 .like_btn_list{background-color:#e38eab;
-          color:#fff;}
+               color:#fff;
+               border:none;}
 .my_posts{background-color:#ebbc5d;
-          color:#fff;}
+          color:#fff;
+          border:none;}
 
 
 /* 掲示板 詳細画面 */
@@ -326,6 +338,9 @@ color:#fff;}
   background: #FFF;
 }
 
+.fil_sex span{gap:0;}
+.fil_sex input{width:1px;}
+
 .subject_edit_btn {
   font-size: 12px;
   color: #0000FF;
@@ -335,3 +350,42 @@ color:#fff;}
 .subject_inner {
   display: none;
 }
+.search_area input{padding:5px 12px;
+              width:80%;
+              border-color:#dee2e6;
+              background-color:transparent}
+.search_bar div{margin-bottom:16px;}
+.input_bar input{background-color:#e0e5e9;}
+.user_category{display:flex;
+             flex-direction: column;}
+.user_category select{border-color:#dee2e6;
+                    background-color:#e0e5e9;
+                    width:30%;}
+.user_sort{display:flex;
+          flex-direction: column;}
+.user_sort select{border-color:#dee2e6;
+                  background-color:#e0e5e9;
+                  width:30%;}
+.search_filter_btn input{background-color:#2ea9df;
+            color:#fff;
+            border:none;
+            border-radius:4px;
+            padding:5px 12px;}
+.search_reset input{border:none;
+                    color:#2ea9df;}
+
+/* 予約詳細一覧 */
+.table_wrapper{border: 1px solid #ccc;
+               border-radius: 10px;
+               padding: 10px;
+               background-color: #fff;}
+.reserve_table{width: 100%;
+               border-collapse: collapse;
+               text-align: center;}
+.reserve_table thead{background-color:#03aad2;
+                     color:#fff;}
+.reserve_table th{padding: 10px;}
+.reserve_table td {padding: 10px;}
+.reserve_table tbody tr:nth-child(even){background-color: #e6f2f7;}
+.reserve_table tbody tr:nth-child(odd){background-color: #fff;}
+.reserve_table tbody tr{border-bottom: 1px solid #ddd;}

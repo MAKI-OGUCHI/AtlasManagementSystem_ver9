@@ -50,18 +50,19 @@
     @endforeach
   </div>
   <div class="search_area w-25 border">
-    <div class="">
-      <div>
+    <div class="search_bar">
+      <p>検索</p>
+      <div class="input_bar">
         <input type="text" class="free_word" name="keyword" placeholder="キーワードを検索" form="userSearchRequest">
       </div>
-      <div>
+      <div class="user_category">
         <lavel>カテゴリ</lavel>
         <select form="userSearchRequest" name="category">
           <option value="name">名前</option>
           <option value="id">社員ID</option>
         </select>
       </div>
-      <div>
+      <div class="user_sort">
         <label>並び替え</label>
         <select name="updown" form="userSearchRequest">
           <option value="ASC">昇順</option>
@@ -73,9 +74,11 @@
         <div class="search_conditions_inner">
           <div>
             <label>性別</label>
+            <div class="fil_sex">
             <span>男</span><input type="radio" name="sex" value="1" form="userSearchRequest">
             <span>女</span><input type="radio" name="sex" value="2" form="userSearchRequest">
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
+            </div>
           </div>
           <div>
             <label>権限</label>
@@ -96,11 +99,11 @@
           </div>
         </div>
       </div>
-      <div>
-        <input type="reset" value="リセット" form="userSearchRequest">
-      </div>
-      <div>
+      <div class="search_filter_btn">
         <input type="submit" name="search_btn" value="検索" form="userSearchRequest">
+      </div>
+      <div class="search_reset">
+        <input type="reset" value="リセット" form="userSearchRequest">
       </div>
     </div>
     <form action="{{ route('user.show') }}" method="get" id="userSearchRequest"></form>

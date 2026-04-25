@@ -27,7 +27,7 @@
     <div class="border m-4">
       <div class="post_btn"><a href="{{ route('post.input') }}">投稿</a></div>
       <div class="keyword">
-        <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest">
+        <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest" class="search_input">
         <input type="submit" value="検索" form="postSearchRequest" class="search_btn">
       </div>
       <div class="filter_btn">

@@ -20,7 +20,7 @@
     <body class="all_content">
         <div class="d-flex">
             <div class="sidebar">
-                <p><img src="{{asset('image/top.png')}}" alt="" class="menu_icon"><a href="{{ route('top.show') }}"> トップ</a></p>
+                <p><img src="{{asset('image/top.png')}}" alt="" class="menu_icon"><a href="{{ route('top.show') }}">マイページ</a></p>
                 <p><img src="{{asset('image/logout.png')}}" alt="" class="menu_icon"><a href="/logout"> ログアウト</a></p>
                 <p><img src="{{asset('image/reserve.png')}}" alt="" class="menu_icon"><a href="{{ route('calendar.general.show',['user_id' => Auth::id()]) }}"> スクール予約</a></p>
                 @can('admin')
