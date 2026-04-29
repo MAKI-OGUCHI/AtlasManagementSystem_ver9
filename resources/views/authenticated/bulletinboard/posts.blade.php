@@ -36,12 +36,16 @@
       </div>
       <ul>
         @foreach($categories as $category)
-        <li class="main_categories" category_id="{{ $category->id }}"><span>{{ $category->main_category }}<span></li>
-          <ul id="{{ $category->id }}">
+        <div>
+        <label class="main_categories" data-target="#category{{ $category->id }}" data-toggle="collapse">{{ $category->main_category }}<span class="p_arrow"></span></label>
+        <div id="category{{$category->id}}" class="collapse">
+          <ul class="sub">
             @foreach($category -> subCategories as $subCategory)
             <li><button type="submit" name="category_word" value="{{$subCategory -> sub_category}}" form="postSearchRequest">{{$subCategory -> sub_category}}</button></li>
             @endforeach
           </ul>
+        </div>
+        </div>
         @endforeach
       </ul>
     </div>

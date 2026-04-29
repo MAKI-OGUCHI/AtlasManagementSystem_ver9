@@ -65,7 +65,7 @@
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
         </div>
-        <div class="mt-3">
+        <div class="mt-3 birth_day">
           @error('old_year')
             <div class="text-danger" style="font-size:12px">{{ $message }}</div>
           @enderror
@@ -194,7 +194,7 @@
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
         <div class="text-center">
-          <a href="{{ route('loginView') }}">ログイン</a>
+          <a href="{{ route('loginView') }}">ログインはこちら</a>
         </div>
       </div>
       <!-- {{ csrf_field() }} -->

@@ -51,6 +51,9 @@ li {
             text-align: right;}
 .register_link {text-align: center;
                 font-size: 13px;}
+/* 新規登録 */
+.birth_day select{border:none;
+                  border-bottom:1px solid #0d82ff;}
 
 /* サイドバー */
 .sidebar {
@@ -67,12 +70,13 @@ li {
 .sidebar p a {
   color: #FFF;
 }
-.menu_icon{width:22px;}
+.menu_icon{width:16%;}
 
 /* トップページ */
 .user_status {
   border-radius: 10px;
   background: #FFF;
+  margin-top:6%;
 }
 
 /* スクール予約関連 */
@@ -283,6 +287,11 @@ li {
   background: #FFF;
   border-radius: 10px;
 }
+.main_box{margin-bottom:22px;}
+.main_box input:first-of-type{margin-bottom:10px;}
+.sub_box select{width:100%;
+                margin-bottom:10px;}
+.sub_box input:first-of-type{margin-bottom:10px;}
 
 .category_box {
   border-radius: 5px;
@@ -306,6 +315,19 @@ li {
   list-style: none;
   cursor: pointer;
 }
+.main_categories{border-bottom:1px solid #c7cacd;
+                 display:flex;
+                 justify-content:space-between;
+                 margin:24px 0;}
+.p_arrow{border-left:solid 1px #000;
+       border-top:solid 1px #000;
+       display:inline-block;
+       width:10px;
+       height:10px;
+       margin:0 0 0 126px;
+       transform:rotate(-135deg);
+       transition:transform 0.5s;}
+.p_arrow.rotation{transform:rotate(45deg);}
 
 /* ユーザー検索 */
 .reserve_users_area {
@@ -329,10 +351,9 @@ li {
   height: 250px;
 }
 
-.search_conditions {border-bottom:solid 1px #000;}
-.search_conditions span {
-  cursor: pointer;
-}
+.search_conditions {border-bottom:solid 1px #000;
+                    width:80%;}
+.search_conditions span{cursor: pointer;}
 .arrow{border-left:solid 1px #000;
        border-top:solid 1px #000;
        display:inline-block;
@@ -345,50 +366,80 @@ li {
        top:31.5%;}
 .arrow.rotation{transform:rotate(45deg);}
 
-.search_conditions_inner {
-  display: none;
-  background: #FFF;
-}
-
+.search_conditions_inner {display: none;
+                          background:#ecf1f6;
+                          width:80%;}
 .fil_sex{display:flex;}
 .fil_sex input[type="radio"]{width:10px;
                              margin-right:10px;}
+.fil_authority{display:flex;
+               flex-direction:column;}
+.engineer{width:30%;
+          border-color:#dee2e6;
+          background-color:#e0e5e9;
+          border-radius:8px;}
 .fil_sub{display:flex;}
 .fil_sub input[type="checkbox"]{width:10px;
                              margin-right:10px;}
-
-.subject_edit_btn {
-  font-size: 12px;
-  color: #0000FF;
-  cursor: pointer;
-}
-
-.subject_inner {
-  display: none;
-}
 .search_area input{padding:5px 12px;
               width:80%;
               border-color:#dee2e6;
               background-color:transparent}
 .search_bar div{margin-bottom:16px;}
-.input_bar input{background-color:#e0e5e9;}
+.input_bar input{background-color:#e0e5e9;
+                 border-radius:8px;}
 .user_category{display:flex;
-             flex-direction: column;}
+               flex-direction: column;}
 .user_category select{border-color:#dee2e6;
-                    background-color:#e0e5e9;
-                    width:30%;}
+                      background-color:#e0e5e9;
+                      width:30%;
+                      border-radius:8px;}
 .user_sort{display:flex;
           flex-direction: column;}
 .user_sort select{border-color:#dee2e6;
                   background-color:#e0e5e9;
-                  width:30%;}
+                  width:30%;
+                  border-radius:8px;}
 .search_filter_btn input{background-color:#2ea9df;
             color:#fff;
             border:none;
             border-radius:4px;
-            padding:5px 12px;}
+            padding:8px 12px;}
 .search_reset input{border:none;
                     color:#2ea9df;}
+
+/* プロフィール詳細ページ */
+.profile_title{position:absolute;
+               top:0.8%;
+               left:10.5%;}
+.subject_edit_area{margin-top: 10px;}
+.subject_header{display:flex;
+                align-items:center;
+                cursor:pointer;}
+.subject_edit_btn{font-size: 12px;
+                  color:#0eacd4;
+                  cursor: pointer;}
+.subject_arrow{display:inline-block;
+               border-left:solid 1px #0eacd4;
+               border-top:solid 1px #0eacd4;
+               width:8px;
+               height:8px;
+               margin-left:8px;
+               transform:rotate(-135deg);
+               transition:transform 0.3s;}
+.subject_arrow.open{transform:rotate(45deg);}
+.subject_inner{display:none;
+               margin-top:12px;}
+.subjects_list{display:flex;
+               align-items:center;
+               gap:14px;}
+.subject_item{display:flex;
+              align-items: center;
+              font-size: 16px;}
+.subject_item label{margin-right: 4px;}
+.subject_item input[type="checkbox"]{width:14px;
+                                     height:14px;}
+.subject_submit {padding: 6px 16px;}
 
 /* 予約詳細一覧 */
 .table_wrapper{border: 1px solid #ccc;

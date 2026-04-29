@@ -12,3 +12,8 @@ $(function () {
     $('.arrow').toggleClass('rotation');
   });
 });
+$(function () {
+  $('.subject_edit_btn, .subject_arrow').click(function () {
+    $('.subject_arrow').toggleClass('open');
+  });
+});

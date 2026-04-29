@@ -81,7 +81,7 @@
             <span>その他</span><input type="radio" name="sex" value="3" form="userSearchRequest">
             </div>
           </div>
-          <div>
+          <div class="fil_authority">
             <label>権限</label>
             <select name="role" form="userSearchRequest" class="engineer">
               <option selected disabled>----</option>
