@@ -58,7 +58,7 @@ li {
 /* サイドバー */
 .sidebar {
   width: 150px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
 }
@@ -87,19 +87,22 @@ li {
 .day-sat {
   color: #0000FF;
 }
-
+.st{color: #0000FF;}
 .day-sun {
   color: #FF0000;
 }
-
+.sun{color:#FF0000;}
 .past-day {
   background: #EEE;
 }
+.past-day:nth-child(6){color:#0000ff !important;}
+.past-day:nth-child(7){color:#ff0000 !important;}
 
 .calendar-td {
   min-width: 100px;
 }
-
+.calendar-td:nth-child(6) .day{color:#0000ff !important;}
+.calendar-td:nth-child(7) .day{color:#ff0000 !important;}
 .day_part {
   color: #494949;
   font-size: 12px;
@@ -175,6 +178,8 @@ li {
 .post_bottom_area {
   justify-content: space-between;
 }
+.post_status{justify-content: space-between;}
+.comment{margin-left:800px;}
 
 .like_btn,
 .un_like_btn {
@@ -191,6 +196,8 @@ li {
   color: red;
 }
 
+.other_area{min-height:100vh;
+            border-left:1px solid #c7cacd;}
 .post_btn{ display: block;
   width: 100%;
   background-color: #2ea9df;
@@ -352,18 +359,17 @@ li {
 }
 
 .search_conditions {border-bottom:solid 1px #000;
-                    width:80%;}
+                    width:80%;
+                    display:flex;
+                    justify-content:space-between;}
 .search_conditions span{cursor: pointer;}
 .arrow{border-left:solid 1px #000;
        border-top:solid 1px #000;
-       display:inline-block;
+       /* display:inline-block; */
        width:10px;
        height:10px;
-       margin:0 0 0 126px;
        transform:rotate(-135deg);
-       transition:transform 0.5s;
-       position:absolute;
-       top:31.5%;}
+       transition:transform 0.5s;}
 .arrow.rotation{transform:rotate(45deg);}
 
 .search_conditions_inner {display: none;
@@ -445,7 +451,8 @@ li {
 .table_wrapper{border: 1px solid #ccc;
                border-radius: 10px;
                padding: 10px;
-               background-color: #fff;}
+               background-color: #fff;
+               height:auto;}
 .reserve_table{width: 100%;
                border-collapse: collapse;
                text-align: center;}

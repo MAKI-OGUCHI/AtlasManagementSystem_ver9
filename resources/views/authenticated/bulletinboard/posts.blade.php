@@ -8,7 +8,10 @@
       <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
       <div class="post_bottom_area d-flex">
         <div class="d-flex post_status">
-          <div class="mr-5">
+          @foreach($post -> subCategories as $subcategory)
+          <button>{{$subcategory -> sub_category}}</button>
+          @endforeach
+          <div class="mr-5 comment">
             <i class="fa fa-comment"></i><span class="">{{ $post->postComments -> count() }}</span>
           </div>
           <div>
@@ -23,7 +26,7 @@
     </div>
     @endforeach
   </div>
-  <div class="other_area border w-25">
+  <div class="other_area w-25">
     <div class="border m-4">
       <div class="post_btn"><a href="{{ route('post.input') }}">投稿</a></div>
       <div class="keyword">
