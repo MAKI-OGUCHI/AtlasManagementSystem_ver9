@@ -6,11 +6,11 @@
         <div class="detail_inner_head">
           <div>
           </div>
-          <div>
+          <div class="post_edit">
             @if(Auth::id() === $post->user_id)
-            <a class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</a>
+            <button class="edit-modal-open btn btn-primary" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</button>
 
-            <a class="delete-modal-open text-danger" post_id="{{ $post -> id}}" href="{{route('post.delete',['id' => $post -> id])}}" onclick="return confirm('投稿を削除します')">削除</a>
+            <button class="delete-modal-open btn btn-danger" post_id="{{ $post -> id}}" href="{{route('post.delete',['id' => $post -> id])}}" onclick="return confirm('投稿を削除します')">削除</button>
             @endif
           </div>
         </div>
@@ -50,8 +50,10 @@
           <div class="error_message">{{ $message }}</div>
         @enderror
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
-        <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <div class="comment_btn">
+          <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
+          <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        </div>
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>

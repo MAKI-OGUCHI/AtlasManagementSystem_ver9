@@ -17,13 +17,19 @@
   <div class="modal__bg js_modal_close"></div>
   <div class="modal__content">
     <form action="{{route('deleteParts')}}" method="post">
-      <p>予約日：</p><p class="modal-reserveDay"></p>
-      <input type="hidden" name="day" class="modalDay">
-      <p>時間：</p><p class="modal-reservePart"></p>
-      <input type="hidden" name="part" class="modalPart">
+      <div class="reservation_date">
+        <p>予約日：</p><p class="modal-reserveDay"></p>
+        <input type="hidden" name="day" class="modalDay">
+      </div>
+      <div class="reservation_time">
+        <p>時間：</p><p class="modal-reservePart"></p>
+        <input type="hidden" name="part" class="modalPart">
+      </div>
       <p>上記の予約をキャンセルしてもよろしいですか？</p>
-      <button class="js_modal_close btn btn-primary" type="button">閉じる</button>
-      <button class="btn btn-danger" type="submit">キャンセル</button>
+      <div class="modal_btns">
+        <button class="js_modal_close btn btn-primary" type="button">閉じる</button>
+        <button class="btn btn-danger" type="submit">キャンセル</button>
+      </div>
       {{csrf_field()}}
     </form>
   </div>
