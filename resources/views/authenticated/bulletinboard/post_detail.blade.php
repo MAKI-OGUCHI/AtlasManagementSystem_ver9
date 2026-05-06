@@ -4,7 +4,12 @@
     <div class="m-3 detail_container">
       <div class="p-3">
         <div class="detail_inner_head">
-          <div>
+          <div class="sub_category">
+            <button>
+              @foreach($post -> subCategories as $subCategory)
+                {{$subCategory -> sub_category}}
+              @endforeach
+            </button>
           </div>
           <div class="post_edit">
             @if(Auth::id() === $post->user_id)
