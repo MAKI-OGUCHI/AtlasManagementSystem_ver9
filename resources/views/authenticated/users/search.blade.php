@@ -49,7 +49,7 @@
     </div>
     @endforeach
   </div>
-  <div class="search_area w-25 border">
+  <div class="search_area border">
     <div class="search_bar">
       <p>検索</p>
       <div class="input_bar">
